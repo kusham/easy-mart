@@ -11,43 +11,10 @@
 
         @include('AdminPanel.layout.navbar')
         @include('AdminPanel.layout.sidebar')
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
+        <main>
 
-            <section class="content">
-                <div class="container-fluid">
-                    @include('AdminPanel.components.stats')
-
-                    <div class="row">
-                        @include('AdminPanel.components.sales')
-
-                        <section class="col-lg-5 connectedSortable">
-
-                            @include('AdminPanel.components.visitors')
-                            @include('AdminPanel.components.salesGraph')
-                            @include('AdminPanel.components.calender')
-
-
-                        </section>
-
-                    </div>
-                </div>
-            </section>
-        </div>
+            @yield('content')
+        </main>
         @include('AdminPanel.layout.footer')
 
 
@@ -95,6 +62,16 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    {{-- data table --}}
+    <script src="{{ asset('adminPanel/data-table/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('adminPanel/data-table/data-table-act.js') }}"></script>
+
+    {{-- summer note --}}
+    <script src="{{ asset('adminPanel/summernote/summernote.js') }}"></script>
+
+    @yield('script')
+
 </body>
 
 </html>

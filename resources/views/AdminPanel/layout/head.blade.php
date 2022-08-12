@@ -29,3 +29,20 @@
     <link rel="stylesheet" href="{{ asset('adminPanel/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminPanel/plugins/summernote/summernote-bs4.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('adminPanel/data-table/jquery.dataTables.min.css') }}">
+
+
+    {{-- <link rel="stylesheet" href="{{ asset('adminPanel/data-table/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminPanel/data-table/main.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('adminPanel/data-table/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminPanel/data-table/owl.theme.css') }}">  --}}
+    <link rel="stylesheet" href="{{ asset('adminPanel/data-table/style.css') }}">
+    {{-- table font awsome --}}
+
+    {{-- <link rel="stylesheet" href="{{ asset('adminPanel/data-table/chosen.css') }}"> --}}
+
+
+    {{-- summer note --}}
+    <link rel="stylesheet" href="{{ asset('adminPanel/summernote/summernote.css') }}">

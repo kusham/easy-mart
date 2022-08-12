@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="navbar sticky-top main-header  navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -137,6 +137,19 @@
                 href="#" role="button">
                 <i class="fas fa-th-large"></i>
             </a>
+        </li>
+        <li class="nav-item">
+            
+                <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                   
+                    <i class="fas fa-sign-out"></i>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
         </li>
     </ul>
 </nav>
