@@ -1,31 +1,46 @@
 @extends('AdminPanel.layout.master')
 
 @section('content')
-    <div class="content-wrapper">
-        <div class="container p-2">
+    <div class="content-wrapper p-2">
+        <div class="container">
             <div class="card p-4">
-                <form>
+                <div class="col-md-12">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li >{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                        
+                    @endif
+                </div>
+                <form action="{{route('banner.store')}}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="title">Title<span class="text-danger">*</span></label>
-                        <input name="title" type="text" class="form-control" id="title" placeholder="title">
+                        <input name="title" type="text" value="{{old('title')}}" class="form-control" id="title" placeholder="title">
                     </div>
+                    <label for="Photo">Photo<span class="text-danger">*</span></label>
                     <div class="input-group">
+
                         <span class="input-group-btn">
                             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-success">
                                 <i class="fa fa-picture-o"></i> Choose
                             </a>
                         </span>
-                        <input name="photo" id="thumbnail" class="form-control" type="text" name="filepath">
+                        <input value="{{old('photo')}}" name="photo" id="thumbnail" class="form-control" type="text" name="filepath">
                     </div>
                     <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                     <div class="form-group">
-                        <label for="description">Description<span class="text-danger">*</span></label>
-                        <textarea name="description" class="form-control" id="description"></textarea>
+                        <label for="description">Description</label>
+                        <textarea value="{{old('description')}}" name="description" class="form-control" id="description"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Condition<span class="text-danger">*</span></label>
+                        <label for="exampleFormControlSelect1">Condition</label>
                         <select name="condition" class="form-control" id="exampleFormControlSelect1">
-                            <option>--condition--</option>
+                            <option value="">--condition--</option>
                             <option value="banner" {{ old('condition') == 'banner' ? 'selected' : '' }}>Banner</option>
                             <option value="promo" {{ old('condition') == 'promo' ? 'selected' : '' }}>Promo</option>
                         </select>
